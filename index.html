@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffc0cb, #ff99cc);
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #ff4d88;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* GAME */
+.chits {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.chit {
+  width: 80px;
+  height: 80px;
+  background: white;
+  color: #ff4d88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: rotate(10deg);
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+.chit:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="page1">
+  <h1>Hey ❤️</h1>
+  <p>
+    Mujhe pata hai aajkal tum thoda stress feel kar rahi ho... 😔<br><br>
+    Result ka pressure, periods ka pain… sab ek sath aana easy nahi hota 💔<br><br>
+    But ek baat yaad rakhna —  
+    <b>Tum already bohot strong ho 💖</b><br><br>
+    Aur main… hamesha tumhare saath hoon 🤍
+  </p>
+
+  <button onclick="startGame()">Chalo ek chhota sa game khelein 🎮</button>
+</div>
+
+<!-- GAME PAGE -->
+<div class="container hidden" id="gamePage">
+  <h1>Pick any one 💌</h1>
+  <p>Jo tum choose karogi… wahi tumhari destiny 😉💖</p>
+
+  <div class="chits">
+    <div class="chit" onclick="showResult(85)">?</div>
+    <div class="chit" onclick="showResult(87)">?</div>
+    <div class="chit" onclick="showResult(90)">?</div>
+    <div class="chit" onclick="showResult(89)">?</div>
+  </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div class="container hidden" id="resultPage">
+  <h1>🎉 Hurrayyy 🎉</h1>
+  <h2 id="resultText"></h2>
+  <p>
+    Dekhaaa 😍 itni acchi percentage 💖<br><br>
+    Par sach bataun…<br>
+    <b>Ye sab sirf ek game hai 💭</b><br><br>
+    Real life me sabse important hoti hai tumhari mehnat 💪✨
+  </p>
+
+  <button onclick="finalPage()">Next ❤️</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="container hidden" id="finalPage">
+  <h1>Listen ❤️</h1>
+  <p>
+    Marks kabhi bhi tumhari value define nahi karte 💯<br><br>
+    Jo tum ho… woh already enough hai 💖<br><br>
+
+    Bas ab thoda focus aage ke paper pe lagate hain 💪📚<br>
+    SSC ho ya koi bhi exam… tum kar logi 🤍<br><br>
+
+    Aur jab bhi tumhe lage ki tum thak gayi ho…  
+    ya demotivated feel ho rahi ho… 😔<br><br>
+
+    <b>Bas mere paas aajana 💌</b><br>
+    Mujhse baat kar lena… sab share kar lena 💞<br><br>
+
+    Main hamesha tumhare saath hoon…  
+    aaj, kal… aur hamesha ❤️
+  </p>
+
+  <h2>Take care my strong girl 💖</h2>
+</div>
+
+<script>
+function startGame() {
+  document.getElementById("page1").classList.add("hidden");
+  document.getElementById("gamePage").classList.remove("hidden");
+}
+
+function showResult(percent) {
+  document.getElementById("gamePage").classList.add("hidden");
+  document.getElementById("resultPage").classList.remove("hidden");
+  document.getElementById("resultText").innerText = percent + "% 💖";
+}
+
+function finalPage() {
+  document.getElementById("resultPage").classList.add("hidden");
+  document.getElementById("finalPage").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
